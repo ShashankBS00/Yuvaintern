@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- The viewport meta tag is critical for responsive design on mobile devices -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shashank B S | Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <h1 class="logo">SYS.<span>ADMIN</span></h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-content">
+                <h2>Initialize Connection...</h2>
+                <p>Frontend Web Developer & Cyber Enthusiast crafting scalable, responsive, and secure digital environments.</p>
+                <a href="#projects" class="btn-primary">View Output</a>
+            </div>
+        </section>
+
+        <!-- Skills Section using CSS Flexbox -->
+        <section id="skills" class="skills-section container">
+            <h2 class="section-title">Core_Modules</h2>
+            <div class="skills-flex">
+                <div class="skill-card">Responsive Design</div>
+                <div class="skill-card">CSS Grid & Flexbox</div>
+                <div class="skill-card">JavaScript / DOM</div>
+                <div class="skill-card">Cybersecurity Basics</div>
+                <div class="skill-card">Python & FastAPI</div>
+            </div>
+        </section>
+
+        <!-- Projects Section using CSS Grid -->
+        <section id="projects" class="projects-section container">
+            <h2 class="section-title">Active_Deployments</h2>
+            <div class="grid-container">
+                <article class="project-card">
+                    <!-- Fluid image class -->
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="Cyberpunk Server Room" class="fluid-img">
+                    <h3>Digital Raitha</h3>
+                    <p>An agricultural web platform assisting farmers with localized data and market linkages.</p>
+                </article>
+
+                <article class="project-card">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="Matrix Code Stream" class="fluid-img">
+                    <h3>Quantnova</h3>
+                    <p>Algorithmic trading dashboard utilizing Python, XGBoost, and React for strategy backtesting.</p>
+                </article>
+
+                <article class="project-card">
+                    <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=600&q=80" alt="Code Editor" class="fluid-img">
+                    <h3>Color Flipper</h3>
+                    <p>Interactive DOM manipulation project demonstrating JavaScript fundamentals and dynamic styling.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Shashank B S. End of line.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

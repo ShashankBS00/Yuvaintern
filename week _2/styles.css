@@ -1,0 +1,240 @@
+/* =========================================
+   CSS Variables & Reset
+   ========================================= */
+:root {
+    --bg-color: #0d0d0d;
+    --surface-color: #1a1a1a;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --neon-accent: #00ffcc; /* Cyan/Cyberpunk Vibe */
+    --neon-glow: 0 0 10px rgba(0, 255, 204, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace; /* Terminal aesthetic */
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* =========================================
+   Base Layout & Fluid Elements (Mobile First)
+   ========================================= */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/* Fluid Images */
+.fluid-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 2px solid var(--neon-accent);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    color: var(--neon-accent);
+    text-shadow: var(--neon-glow);
+}
+
+/* =========================================
+   Header & Navigation
+   ========================================= */
+.navbar {
+    background-color: rgba(13, 13, 13, 0.9);
+    border-bottom: 1px solid var(--neon-accent);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: column; /* Stacked on mobile */
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.logo span {
+    color: var(--neon-accent);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--neon-accent);
+    text-shadow: var(--neon-glow);
+}
+
+/* =========================================
+   Hero Section
+   ========================================= */
+.hero-section {
+    text-align: center;
+    padding: 4rem 0;
+    border-bottom: 1px dashed var(--text-secondary);
+}
+
+.hero-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: transparent;
+    color: var(--neon-accent);
+    border: 1px solid var(--neon-accent);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background: var(--neon-accent);
+    color: var(--bg-color);
+    box-shadow: var(--neon-glow);
+}
+
+/* =========================================
+   Skills (Flexbox) & Projects (CSS Grid)
+   ========================================= */
+.skills-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.skill-card {
+    background-color: var(--surface-color);
+    padding: 1rem;
+    border-left: 3px solid var(--neon-accent);
+    font-size: 0.9rem;
+}
+
+/* Base grid for mobile: 1 column */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--surface-color);
+    border: 1px solid #333;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--neon-accent);
+}
+
+.project-card h3 {
+    padding: 1rem 1rem 0.5rem;
+    color: var(--neon-accent);
+}
+
+.project-card p {
+    padding: 0 1rem 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid #333;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+/* =========================================
+   MEDIA QUERIES (Responsive Breakpoints)
+   ========================================= */
+
+/* Tablet Devices (Min-width: 768px) */
+@media screen and (min-width: 768px) {
+    .nav-container {
+        flex-direction: row; /* Align side-by-side on tablet */
+        justify-content: space-between;
+    }
+
+    .logo {
+        margin-bottom: 0;
+    }
+
+    .hero-section {
+        padding: 6rem 0;
+    }
+
+    .hero-section h2 {
+        font-size: 2.8rem;
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+
+    /* Change grid to 2 columns on tablet */
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop Devices (Min-width: 1024px) */
+@media screen and (min-width: 1024px) {
+    .container {
+        width: 80%;
+    }
+
+    /* Change grid to 3 columns on desktop */
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+}
