@@ -1,0 +1,226 @@
+:root {
+    --bg-color: #0d0d0d;
+    --surface-color: #1a1a1a;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --neon-accent: #00ffcc; 
+    --neon-glow: 0 0 10px rgba(0, 255, 204, 0.5);
+    --error-color: #ff3366;
+}
+
+/* Alternate Theme Triggered by JS */
+body.alt-theme {
+    --neon-accent: #ff00ff; /* Magenta override */
+    --neon-glow: 0 0 10px rgba(255, 0, 255, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    color: var(--neon-accent);
+    text-shadow: var(--neon-glow);
+}
+
+.navbar {
+    background-color: rgba(13, 13, 13, 0.9);
+    border-bottom: 1px solid var(--neon-accent);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo span {
+    color: var(--neon-accent);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.nav-links a:hover {
+    color: var(--neon-accent);
+    text-shadow: var(--neon-glow);
+}
+
+.btn-small {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--text-secondary);
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn-small:hover {
+    color: var(--neon-accent);
+    border-color: var(--neon-accent);
+}
+
+.hero-section {
+    text-align: center;
+    padding: 4rem 0;
+    min-height: 40vh;
+    border-bottom: 1px dashed var(--text-secondary);
+}
+
+.hero-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    min-height: 2.4rem; /* Prevents layout shift during typing effect */
+}
+
+/* Cursor for JS typing effect */
+.cursor {
+    display: inline-block;
+    width: 10px;
+    background-color: var(--neon-accent);
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: transparent;
+    color: var(--neon-accent);
+    border: 1px solid var(--neon-accent);
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background: var(--neon-accent);
+    color: var(--bg-color);
+    box-shadow: var(--neon-glow);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--surface-color);
+    border: 1px solid #333;
+    overflow: hidden;
+}
+
+.project-card h3 {
+    padding: 1rem 1rem 0.5rem;
+    color: var(--neon-accent);
+}
+
+.project-card p {
+    padding: 0 1rem 1rem;
+    color: var(--text-secondary);
+}
+
+.fluid-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 2px solid var(--neon-accent);
+}
+
+/* Form Styles */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border: 1px solid #333;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--neon-accent);
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--bg-color);
+    border: 1px solid #333;
+    color: var(--text-primary);
+    font-family: inherit;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--neon-accent);
+}
+
+.error-msg {
+    color: var(--error-color);
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 0.3rem;
+}
+
+.success-msg {
+    color: var(--neon-accent);
+    margin-top: 1rem;
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .nav-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
